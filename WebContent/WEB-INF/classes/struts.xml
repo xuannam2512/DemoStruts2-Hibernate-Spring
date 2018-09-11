@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<include file="struts-default.xml" />
+	<package name="HibernateWithXML" extends="struts-default,json-default">
+		<action name="insertData" class="com.codeFactory.action.StoreData">
+			<result name="success">index.jsp</result>
+			<result name="error">index.jsp</result>
+		</action>
+		
+		<action name="listEmployee" class = "com.codeFactory.action.StoreData" method = "getEmployees">
+			<result name = "success">employees.jsp</result>
+			<result name = "error">error.jsp</result>
+		</action>
+	</package>
+</struts>	
