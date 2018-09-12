@@ -13,7 +13,7 @@ public class RegisterAction extends ActionSupport
 {
     private User user;
     @Autowired
-    private UserService userService;
+    private UserService userService = new UserService();
     
     @Action(value = "register",
         results = { @Result(name = "success", location = "/index.jsp", type = "redirect") })

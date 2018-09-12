@@ -11,8 +11,7 @@ import com.hcmus.model.User;
 @Repository
 public class UserDAO
 {
-    @Autowired
-    private HibernateConnection hbnConnection;
+    private HibernateConnection hbnConnection = new HibernateConnection();
     
     public Boolean createUser(User user)
     {

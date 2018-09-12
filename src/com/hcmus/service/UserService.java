@@ -1,6 +1,5 @@
 package com.hcmus.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hcmus.dao.UserDAO;
@@ -9,8 +8,7 @@ import com.hcmus.model.User;
 @Service
 public class UserService
 {
-    @Autowired
-    private UserDAO userDao;
+    private UserDAO userDao = new UserDAO();
     
     public Boolean createUser(User user) {
         try
