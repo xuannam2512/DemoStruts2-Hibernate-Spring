@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans		 
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/tx 
-		http://www.springframework.org/schema/tx/spring-tx.xsd">
-
-	<bean id = "loginClass" class = "com.hcmus.action.LoginAction">
-		<property name="username" value = "test1"></property>
-		<property name="password" value = "123456"></property>
-	</bean>
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context 
+    	http://www.springframework.org/schema/context/spring-context.xsd">
+		
+	<context:annotation-config />
+	<context:component-scan base-package="com.gmail.amato.giorgio.*" />
+	
+	<bean id = "registerAction" class = "com.hcmus.action.RegisterAction"></bean>
+	<bean id = "userService" class = "com.hcmus.service.UserServiceImpl"></bean>
+	<bean id = "userDao" class = "com.hcmus.dao.UserDAOImpl"></bean>
+	<bean id = "hbnConnection" class = "com.hcmus.connection.HibernateConnection"></bean>
 </beans>
