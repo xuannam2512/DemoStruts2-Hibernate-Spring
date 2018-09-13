@@ -4,32 +4,35 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
-import com.hcmus.dao.UserDAOImpl;
-import com.hcmus.model.User;
+import com.hcmus.dao.StudentDAOImpl;
+import com.hcmus.model.Student;
 import com.opensymphony.xwork2.ModelDriven;
 
 
 @Component
-public class UserServiceImpl implements ModelDriven<UserDAOImpl>, GenericService<User>
+public class StudentServiceImpl implements ModelDriven<StudentDAOImpl>, GenericService<Student>
 {
     @Autowired (required = true)
-    private UserDAOImpl userDao;
-
-    @Override
-    public UserDAOImpl getModel()
-    {
-        return this.userDao;
+    private StudentDAOImpl studentDao;
+    
+    public Student findByName(String username) {
+        return studentDao.findByName(username);
     }
 
     @Override
-    public User create(User entity)
+    public StudentDAOImpl getModel()
+    {
+        return this.studentDao;
+    }
+
+    @Override
+    public Student create(Student entity)
     {
         try
         {
-            User user = userDao.create(entity);
-            return user;
+            Student student = studentDao.create(entity);
+            return student;
         }
         catch (Exception e)
         {
@@ -39,14 +42,14 @@ public class UserServiceImpl implements ModelDriven<UserDAOImpl>, GenericService
     }
 
     @Override
-    public User update(int id)
+    public Student update(int id)
     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public List<User> getList()
+    public List<Student> getList()
     {
         // TODO Auto-generated method stub
         return null;

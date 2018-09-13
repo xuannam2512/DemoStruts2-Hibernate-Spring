@@ -5,54 +5,55 @@ import org.apache.struts2.convention.annotation.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.hcmus.model.User;
-import com.hcmus.service.UserServiceImpl;
+import com.hcmus.model.Student;
+import com.hcmus.service.StudentServiceImpl;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 @Component
-public class RegisterAction extends ActionSupport implements ModelDriven<UserServiceImpl>
+public class RegisterAction extends ActionSupport implements ModelDriven<StudentServiceImpl>
 {
-    private User user;
+    private Student student;
     @Autowired(required = true)
-    private UserServiceImpl userService;
+    private StudentServiceImpl studentService;
     
     @Action(value = "register", results = { @Result(name = "success", location = "/index.jsp", type = "redirect"),
             @Result(name = "error", location = "/error.jsp") })
     public String execute() throws Exception
     {
         System.out.println("Register");
-        User newUser = userService.create(user);
+        Student newStudent = studentService.create(student);
         
-        if (newUser == null)
+        if (newStudent == null)
             return ERROR;
         
         return SUCCESS;
     }
     
+    public Student getStudent()
+    {
+        return student;
+    }
+
+    public void setStudent(Student student)
+    {
+        this.student = student;
+    }
+
     @Override
-    public UserServiceImpl getModel()
+    public StudentServiceImpl getModel()
     {
-        return this.userService;
+        return this.studentService;
     }
     
-    public UserServiceImpl getUserService()
+    public StudentServiceImpl getUserService()
     {
-        return userService;
+        return this.studentService;
     }
     
-    public void setUserService(UserServiceImpl userService)
+    public void setUserService(StudentServiceImpl studentService)
     {
-        this.userService = userService;
+        this.studentService = studentService;
     }
     
-    public User getUser()
-    {
-        return user;
-    }
-    
-    public void setUser(User user)
-    {
-        this.user = user;
-    }
 }

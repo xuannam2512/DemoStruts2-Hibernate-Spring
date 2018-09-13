@@ -15,8 +15,9 @@
 	<context:annotation-config />
 	<context:component-scan base-package="com.gmail.amato.giorgio.*" />
 	
+	<bean id = "loginAction" class = "com.hcmus.action.LoginAction"></bean>
 	<bean id = "registerAction" class = "com.hcmus.action.RegisterAction"></bean>
-	<bean id = "userService" class = "com.hcmus.service.UserServiceImpl"></bean>
-	<bean id = "userDao" class = "com.hcmus.dao.UserDAOImpl"></bean>
+	<bean id = "studentService" class = "com.hcmus.service.StudentServiceImpl"></bean>
+	<bean id = "studentDao" class = "com.hcmus.dao.StudentDAOImpl"></bean>
 	<bean id = "hbnConnection" class = "com.hcmus.connection.HibernateConnection"></bean>
 </beans>

@@ -13,7 +13,7 @@
 		<property name="connection.password">123456</property>
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		
-		<mapping class="com.hcmus.model.User" />
+		<mapping class="com.hcmus.model.Student" />
 	</session-factory>
 
 </hibernate-configuration>
