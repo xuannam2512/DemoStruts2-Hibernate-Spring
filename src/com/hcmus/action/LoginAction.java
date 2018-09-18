@@ -16,7 +16,8 @@ public class LoginAction extends ActionSupport implements ModelDriven<StudentSer
     private String username;
     private String password;
     private String message;
-    
+    private Student student;    
+
     @Autowired
     private StudentServiceImpl studentService;
     
@@ -33,7 +34,7 @@ public class LoginAction extends ActionSupport implements ModelDriven<StudentSer
             return ERROR;
         }
         
-        Student student = studentService.findByName(this.username);
+        this.student = studentService.findByName(this.username);
         
         if (student == null) {
             this.message = "Server is error";
@@ -46,6 +47,16 @@ public class LoginAction extends ActionSupport implements ModelDriven<StudentSer
         }            
         
         return SUCCESS;
+    }
+    
+    public Student getStudent()
+    {
+        return student;
+    }
+
+    public void setStudent(Student student)
+    {
+        this.student = student;
     }
     
     public String getUsername()

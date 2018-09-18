@@ -18,6 +18,10 @@
 	<bean id = "loginAction" class = "com.hcmus.action.LoginAction"></bean>
 	<bean id = "registerAction" class = "com.hcmus.action.RegisterAction"></bean>
 	<bean id = "studentService" class = "com.hcmus.service.StudentServiceImpl"></bean>
-	<bean id = "studentDao" class = "com.hcmus.dao.StudentDAOImpl"></bean>
+	<bean id = "studentDao" class = "com.hcmus.dao.StudentDAOImpl"></bean>	
 	<bean id = "hbnConnection" class = "com.hcmus.connection.HibernateConnection"></bean>
+	
+	<bean id = "registerSubjectAction" class = "com.hcmus.action.RegisterSubjectAction"></bean>
+	<bean id = "subjectService" class = "com.hcmus.service.SubjectServiceImpl"></bean>
+	<bean id = "subjectDao" class = "com.hcmus.dao.SubjectDAOImpl"></bean>	
 </beans>

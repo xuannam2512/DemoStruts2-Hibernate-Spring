@@ -5,8 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>HCMUS</title>
+<title>HCMUS PORTAL</title>
 <style type="text/css">
+
+body {
+	margin: 0 auto;
+	padding: 0 auto;
+	background-color: #eaeaea;
+}
+
 #loginBox {
 	border: 1px;
 	border-color: black;
@@ -21,7 +28,7 @@
 
 #btnLogin {
 	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 	width: 40%;
 	border: 0px;
 	background-color: #C6E2FF;
@@ -33,7 +40,7 @@
 }
 
 #btnLogin:hover {
-	background-color: #3F93AA;
+	background-color: #3F93AA;	
 }
 
 .container {
@@ -65,6 +72,15 @@ h1 {
 
 #aRegister {
 	text-decoration: none;
+	color: black;
+	border: 1px;
+	border-color: black;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #C6E2FF;
+	margin-left: 210px;
 }
 
 .btnRegister {
@@ -106,9 +122,8 @@ h1 {
 				<s:submit id="btnLogin" value="Login"></s:submit>
 			</s:form>
 			
-			<button class = "btnRegister">
-				<s:a href="/ManageStudent/register.jsp" id="aRegister">Register</s:a>
-			</button>
+			<s:a href="/ManageStudent/register.jsp" id="aRegister">Register</s:a>									
+
 		</center>
 
 	</div>

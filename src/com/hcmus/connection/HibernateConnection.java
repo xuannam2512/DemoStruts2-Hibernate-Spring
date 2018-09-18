@@ -6,14 +6,16 @@ import org.hibernate.cfg.AnnotationConfiguration;
 
 public class HibernateConnection
 {
-    AnnotationConfiguration cfg = new AnnotationConfiguration();
-    SessionFactory factory;
+    static AnnotationConfiguration cfg = new AnnotationConfiguration();
+    static SessionFactory factory;
     Session session;
     
-    public Session getHbnConnection() {
+    static {
         cfg.configure("hibernate.cfg.xml");
         factory = cfg.buildSessionFactory();
-        
+    }
+    
+    public Session getHbnConnection() {        
         session = factory.openSession();
         
         return session;
